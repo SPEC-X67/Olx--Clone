@@ -21,7 +21,7 @@
   padding: 0 8px;
   border: 2px solid #002f34;
   border-radius: 4px;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
 }
 
 .placeSearch ::selection {
@@ -32,6 +32,7 @@
 .placeSearch input {
   border-color: transparent;
   outline-color: transparent;
+  background-color: white;
 }
 
 .productSearch {
@@ -41,7 +42,7 @@
   border-radius: 4px;
   display: flex;
   align-items: center;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -58,6 +59,7 @@
   outline-color: transparent;
   width: 100%;
   align-items: center;
+  background-color: white;
 }
 
 .productSearch .searchAction {

@@ -1,4 +1,5 @@
 import Login from '../Components/Login/Login';
+import './Login.css'
 
 function LoginPage() {
   return (
