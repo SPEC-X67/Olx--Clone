@@ -2,13 +2,12 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
-import { FirebaseContext } from "./store/FirebaseContext.js";
-import firebase from '../firebase/config.js'
+import { FirebaseProvider } from "./store/FirebaseContext.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <FirebaseContext.Provider value={{firebase}}>
+    <FirebaseProvider>
       <App />
-    </FirebaseContext.Provider>
+    </FirebaseProvider>
   </StrictMode>
 );
