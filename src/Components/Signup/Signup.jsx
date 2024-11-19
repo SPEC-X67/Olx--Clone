@@ -1,11 +1,13 @@
 import { useState } from "react";
 import Logo from "../../olx-logo.png";
 import "./Signup.css";
-import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth"; // Import necessary functions
-import { doc, setDoc } from "firebase/firestore"; // Import Firestore functions
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { doc, setDoc } from "firebase/firestore"; 
 import { useFirebase } from "../../store/FirebaseContext";
+import { useNavigate } from "react-router-dom";
 
 export default function Signup() {
+  const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -17,13 +19,13 @@ export default function Signup() {
     e.preventDefault();
 
     try {
-        // Create a new user using email and password
+        // Create a new user
         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
   
         // Update the user's profile with the username
         await updateProfile(userCredential.user, { displayName: username });
   
-        // Store additional user details (username, email, phone) in Firestore
+        // Store additional user details
         const userRef = doc(db, "users", userCredential.user.uid);
         await setDoc(userRef, {
           username,
@@ -31,11 +33,12 @@ export default function Signup() {
           phone,
         });
   
-        // Reset form after successful signup
         setUsername("");
         setEmail("");
         setPassword("");
         setPhone("");
+
+        navigate('/login')
         console.log('register sussfullyh..');
     } catch (error) {
       console.error("Error signing up: ", error);
