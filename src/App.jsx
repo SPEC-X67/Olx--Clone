@@ -6,7 +6,8 @@ import Login from "../src/Pages/Login";
 import { useEffect, useContext } from "react";
 import { FirebaseContext } from "./store/FirebaseContext";
 import Create from '../src/Pages/Create'
-import ViewPost from '../src/Pages/ViewPost'
+import ViewPost from '../src/Pages/ViewPost'   
+import SearchPage from "./Pages/Search";
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/create" element={<Create />} />
           <Route path="/view" element={<ViewPost />} />
+          <Route path="/search" element={<SearchPage />} />
           <Route path="*" element={<div>Page not found</div>} />
         </Routes>
       </Router>
