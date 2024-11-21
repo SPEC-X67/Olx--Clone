@@ -31,6 +31,7 @@ export default function Signup() {
           username,
           email,
           phone,
+          uid: userCredential.user.uid,
         });
   
         setUsername("");
