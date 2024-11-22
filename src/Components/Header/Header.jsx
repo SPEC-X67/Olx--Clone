@@ -106,10 +106,6 @@ function Header() {
             <Search color="#ffffff" />
           </div>
         </div>
-        <div className="language">
-          <span> ENGLISH </span>
-          <Arrow />
-        </div>
         <div className="loginPage">
           <span
             onClick={() => {
