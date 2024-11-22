@@ -1,8 +1,8 @@
- export default function SellButtonPlus(params) {
+ export default function SellButtonPlus() {
     return(
         <svg
-                width="16px"
-                height="16px"
+                width="14px"
+                height="14px"
                 viewBox="0 0 1024 1024"
                 data-aut-id="icon"
                 className

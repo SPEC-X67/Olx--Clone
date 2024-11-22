@@ -1,7 +1,6 @@
 import "./Header.css";
 import OlxLogo from "../../assets/OlxLogo";
 import Search from "../../assets/Search";
-import Arrow from "../../assets/Arrow";
 import SellButton from "../../assets/SellButton";
 import SellButtonPlus from "../../assets/SellButtonPlus";
 import { useContext, useEffect, useState } from "react";
@@ -74,62 +73,66 @@ function Header() {
   return (
     <div className="headerParentDiv">
       <div className="headerChildDiv">
-        <div className="brandName" onClick={() => navigate("/")}>
-          <OlxLogo />
-        </div>
-        <div className="placeSearch">
-          <Search />
-          <input type="text" />
-          <Arrow />
-        </div>
-        <div className="productSearch">
-          <div className="input">
-            <input
-              type="text"
-              placeholder="Find car, mobile phone, and more..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              onKeyPress={handleKeyPress}
-            />
-            {suggestions.length > 0 && (
-              <ul className="suggestionDropdown">
-                {suggestions.map((item) => (
-                  <li key={item.id} onClick={() => handleSuggestionClick(item)}>
-                    {item.name} -{" "}
-                    <span style={{ fontStyle: "italic" }}>{item.category}</span>
-                  </li>
-                ))}
-              </ul>
-            )}
+        <div className="left-head">
+          <div className="brandName" onClick={() => navigate("/")}>
+            <OlxLogo />
           </div>
-          <div className="searchAction" onClick={handleSearch}>
-            <Search color="#ffffff" />
-          </div>
+          <div className="productSearch">
+            <div className="input">
+              <input
+                type="text"
+                placeholder="Find car, mobile phone, and more..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                onKeyPress={handleKeyPress}
+              />
+            </div>
+            
+            <div className="searchAction" onClick={handleSearch}>
+              <Search color="#ffffff" />
+            </div>
+            
+                
+              {suggestions.length > 0 && (
+                <ul className="suggestionDropdown">
+                  {suggestions.map((item) => (
+                    <li
+                    key={item.id}
+                    onClick={() => handleSuggestionClick(item)}
+                    >
+                      {item.name} - {"      "}
+                      <span style={{ fontStyle: "italic", textAlign: "end" }}>
+                        {item.category}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
         </div>
-        <div className="loginPage">
+        <div className="right-head">
+        <div className="dropdown">
           <span
+            className="drop-user"
             onClick={() => {
               if (!user) navigate("/login");
-            }}
-          >
-            {user ? user.displayName : "Login"}
-          </span>
-        </div>
-        {user && (
-          <span
-            onClick={() => {
-              auth.signOut();
-              navigate("/login");
-            }}
-          >
-            Logout
-          </span>
-        )}
-        <div className="sellMenu">
-          <SellButton />
-          <div className="sellMenuContent">
-            <SellButtonPlus />
-            <span onClick={() => navigate("/create")}>SELL</span>
+            }}> {user ? user.displayName : "Login"} </span>
+
+          {user && (
+            <span
+              className="drop-logout"
+              onClick={() => {
+                auth.signOut();
+                navigate("/login");
+              }}> Logout </span>
+          )}
+         </div>
+          <div className="sellMenu" onClick={() => navigate("/create")}>
+            <SellButton />
+            <div className="sellMenuContent">
+              <SellButtonPlus />
+              <span>SELL</span>
+            </div>
           </div>
         </div>
       </div>

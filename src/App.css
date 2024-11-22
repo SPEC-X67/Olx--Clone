@@ -1,3 +1,11 @@
 :root {
     overflow-x: hidden;
-}
+    --primary-color: #002f34;
+    --secondary-color: #ddd;
+    --background-color: #fff;
+  }
+  
+  .productSearch .searchAction {
+    background-color: var(--primary-color);
+  }
+  

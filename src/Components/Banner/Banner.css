@@ -4,10 +4,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #f6f9ff;
+  background: rgb(246,249,255);
   box-shadow: 0 0 5px 0px #eee;
   flex-wrap: wrap;
   padding: 1.2rem;
+  margin-top: 25px;
 }
 
 .subNavbar .left-nav {
@@ -24,7 +25,7 @@
 }
 
 .subNavbar h1 {
-  font-size: 1rem;
+  font-size: 0.8rem;
   display: flex;
   align-items: center;
   font-weight: bold;
@@ -34,8 +35,8 @@
 }
 
  .subNavbar h1 svg {
-  font-size: 1.2rem;
-  margin-left: 0.3rem;
+  font-size: 1.5rem;
+  margin-left: 0.1rem;
   color: #333;
 }
 
@@ -52,7 +53,7 @@
 }
 
 .subNavbar ul li a {
-  font-size: 0.96rem;
+  font-size: 0.9rem;
   color: #272727;
   text-decoration: none;
   transition: color 0.3s ease;
