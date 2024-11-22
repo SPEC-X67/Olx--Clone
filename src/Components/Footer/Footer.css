@@ -1,27 +1,132 @@
-.footerParentDiv {
-  width: 100vw;
+.footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  margin-top: 7px;
 }
-.footerParentDiv .content {
+
+.footer__top {
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: rgb(238, 238, 238);
+  flex-wrap: wrap;
+  padding-top: 30px;
+}
+
+.center {
+  width: 1000px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #ebeeef;
-  padding: 16px;
+  flex-wrap: wrap;
 }
-.footerParentDiv .content .heading {
-  font-size: 24px;
+
+.categories {
+  
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.categories h4 {
+  font-size: 14.3px;
   font-weight: bolder;
 }
 
-.footerParentDiv .footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  background: #002f34;
-  color: whitesmoke;
+.categories ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.footerParentDiv .footer p {
+.categories ul li {
+  padding: 0.3rem 0;
+  margin-right: 30px;
+}
+
+.categories ul li a {
+  color: #3a3939;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.categories ul li:hover a {
+  color: #3a77ff;
+}
+
+.foolow__us {
+  flex: 1 1 200px;
+  padding: 1rem;
+}
+
+.foolow__us h4 {
+  font-size: 1rem;
+  padding-bottom: 0.1rem;
+  font-weight: bold;
+}
+
+.social__icon {
+  list-style: none;
+  display: flex;
+  padding: 0.7rem 0;
   margin: 0;
+  flex-wrap: wrap;
+  text-decoration: none;
+  color: #3a3939;
+}
+
+.social__icon li {
+  width: 26px;
+  height: 26px;
+  padding: 0.3rem;
+  border: 2px solid #565555;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 8px 0px 0px;
+  transition: all 0.3s ease;
+}
+
+.social-icon {
+  color:  #565555;
+  transition: color 0.3s ease;
+  
+}
+
+.social__icon li:hover {
+  box-shadow: 0 0 10px 0px #716d6d7f;
+}
+
+.download__app__option {
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+}
+
+.download__app__option img {
+  width: 70px;
+  height: auto;
+}
+
+.footer__bottom {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: #3a77ff;
+  padding: 0.6rem;
+  font-size: 0.7rem;
+  color: white;
+  text-align: center;
+}
+
+.footer__bottom p {
+  margin: 0 0.5rem;
 }

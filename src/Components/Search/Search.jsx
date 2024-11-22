@@ -1,18 +1,21 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { collection, query, orderBy, getDocs } from "firebase/firestore";
 import { useFirebase } from "../../store/FirebaseContext";
+import { useProduct } from "../../store/ProductContext";
 import "./Search.css";
 
 function SearchResults() {
   const location = useLocation();
   const { db } = useFirebase();
+  const navigate = useNavigate();
 
   const queryParams = new URLSearchParams(location.search);
   const searchQuery = queryParams.get("query");
 
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const { setSelectedProduct } = useProduct()
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -50,6 +53,11 @@ function SearchResults() {
     fetchProducts();
   }, [db, searchQuery]);
 
+  const handleView = (product) => {
+    setSelectedProduct(product);
+    navigate('/view')
+  }
+
   return (
     <div className="searchResults">
       <h1>Search Results for {searchQuery} </h1>
@@ -60,7 +68,7 @@ function SearchResults() {
       ) : (
         <div className="productGrid">
           {products.map((product) => (
-            <div key={product.id} className="productCard">
+            <div key={product.id} className="productCard" onClick={() => handleView(product)}>
               <img src={product.imageUrl} alt={product.name} />
               <div className="productDetails">
                 <h2>{product.name}</h2>

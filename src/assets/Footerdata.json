@@ -1,0 +1,32 @@
+{
+  "footerItem": [
+    {
+      "heading": "POPULAR CATEGORIES",
+      "item1": "Cars",
+      "item2": "Flats for rent",
+      "item3": "Mobile Phones",
+      "item4": "Jobs"
+    },
+    {
+      "heading": "TRENDING SEARCHES",
+      "item1": "Bikes",
+      "item2": "Watches",
+      "item3": "Books",
+      "item4": "Dogs"
+    },
+    {
+      "heading": "ABOUT US",
+      "item1": "About EMPG",
+      "item2": "OLX Blog",
+      "item3": "Contact Us",
+      "item4": "OLX for Businesses"
+    },
+    {
+      "heading": "OLX",
+      "item1": "Help",
+      "item2": "Sitemap",
+      "item3": "Terms of use",
+      "item4": "Privacy Policy"
+    }
+  ]
+}
