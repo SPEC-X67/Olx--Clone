@@ -52,11 +52,11 @@ function Posts() {
             </div>
             <div className="content">
               <p className="rate">&#x20B9; {product.price}</p>
-              <span className="kilometer"> {product.category}</span>
               <p className="name"> {product.name}</p>
-            </div>
+              <span className="category"> {product.category}</span>
             <div className="date">
               <span>{ product.createdAt.toDate().toDateString()}</span>
+            </div>
             </div>
           </div>
           ))}
@@ -66,9 +66,9 @@ function Posts() {
         <div className="heading">
           <span>Fresh recommendations</span>
         </div>
-        <div className="cards">
-        {products.map((product) => (
-            <div className="card" key={product.id}>
+        <div className="cards" >
+        {products.reverse().map((product) => (
+            <div className="card" key={product.id} style={{border: "1px solid"}}>
               <div className="favorite">
                 <Heart />
               </div>
@@ -77,7 +77,7 @@ function Posts() {
               </div>
               <div className="content">
                 <p className="rate">&#x20B9; {product.price}</p>
-                <span className="kilometer">{product.category}</span>
+                <span className="category">{product.category}</span>
                 <p className="name">{product.name}</p>
               </div>
               <div className="date">

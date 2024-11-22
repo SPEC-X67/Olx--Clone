@@ -1,44 +1,51 @@
 .moreView {
-  margin: 16px 16px 24px;
+  margin: 2%;
   padding: 16px 16px 32px;
-  background-color: #ebeeef;
-  border-radius: 4px;
+  background-color:#eeeeee;
+  border-radius: 24px;
 }
 
 .heading {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  width: 100%;;
 }
 .heading :first-child {
+  margin-left: 13px;
   font-size: 24px;
-  color: #002f34;
+  color: #002c31;
+  font-weight: 500;
+  margin-bottom: 13px;
 }
 
 .heading :last-child {
   font-size: 14px;
+  margin-top: -13px;
+  margin-right: 13px;
   color: #002f34;
+  font-weight: 500;
 }
 
-.recommendations .cards {
+.cards {
   display: flex;
-}
-
-.moreView .cards {
-  white-space: nowrap;
-  overflow-x: scroll;
-  overflow-y: hidden;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
 }
 
 .card {
   margin-right: 15px;
   padding: 13px;
-  max-width: 222px;
-  width: 222px;
-  height: 270px;
+  max-width: 230px;
+  width: 230px;
+  height: 280px;
   display: inline-block;
   cursor: pointer;
+  border-radius: 12px;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.045) 0px 4px 12px;
 }
 
 .card .favorite {
@@ -51,37 +58,64 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 120px;
+  width: 100%;
 }
 
 .card .image img {
-  height: 100px;
   max-width: 100%;
   max-height: 100%;
-  min-height: 100%;
-  text-align: center;
+
+}
+
+.content {
+  max-width: 100%;
+  max-height: 100%;
 }
 .card .content .rate {
-  margin-top: 10px;
+  margin-top: 8px;
   font-size: larger;
   font-weight: bold;
+  margin-bottom: 8px;
 }
-.card .content .kilometer {
-  font-size: medium;
+.card .content .category {
+  font-size: small;
 }
 .card .content .name {
-  font-size: small;
+  font-size: medium;
+  margin-bottom: 3px;
 }
 .card .date {
   display: flex;
   justify-content: flex-end;
   font-size: small;
+  padding-bottom: 10px;
+}
+
+.recommendations .cards {
+  justify-content: start;   
+  align-items: center;                                                                                                                                                                                                                                                                
+  display: flex; 
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden; 
+  max-width: 100%; 
+  padding: 20px;
 }
 
 .recommendations {
-  margin: 16px 16px 24px;
+  margin: 3%;
+}
+
+.recommendations .card {
+  flex: 0 0 auto;
+  width: 230px;
+  height: 280px;
+  box-shadow: rgba(1, 7, 33, 0.15) 0px 4px 12px;
 }
 
 .recommendations .heading span {
   font-size: 24px;
   color: #002f34;
+  margin: 0px -1px 10px 1%;
 }

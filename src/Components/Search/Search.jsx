@@ -60,7 +60,8 @@ function SearchResults() {
 
   return (
     <div className="searchResults">
-      <h1>Search Results for {searchQuery} </h1>
+      <div className="mine-div">
+      <h1>Results for {searchQuery} </h1>
       {loading ? (
         <p>Loading products...</p>
       ) : products.length === 0 ? (
@@ -72,13 +73,14 @@ function SearchResults() {
               <img src={product.imageUrl} alt={product.name} />
               <div className="productDetails">
                 <h2>{product.name}</h2>
-                <p>₹{product.price}</p>
-                <p>{product.category}</p>
+                <p className="y">₹{product.price}</p>
+                <p className="x">{product.category}</p>
               </div>
             </div>
           ))}
         </div>
       )}
+      </div>
     </div>
   );
 }
