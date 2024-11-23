@@ -68,7 +68,7 @@ function Posts() {
         </div>
         <div className="cards" >
         {products.reverse().map((product) => (
-            <div className="card" key={product.id} style={{border: "1px solid"}}>
+            <div className="card" key={product.id} style={{border: "1px solid"}} onClick={() => handleView(product)}>
               <div className="favorite">
                 <Heart />
               </div>

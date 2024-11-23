@@ -46,7 +46,14 @@
   border-radius: 12px;
   border: none;
   box-shadow: rgba(0, 0, 0, 0.045) 0px 4px 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 8px 20px; 
+}
+
 
 .card .favorite {
   display: flex;
