@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useFirebase } from "../../store/FirebaseContext";
 import { addDoc, collection } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
+import { toast } from 'react-toastify';
 
 const Create = () => {
   const { db, user} = useFirebase();
@@ -17,13 +18,14 @@ const Create = () => {
   const navigate = useNavigate();
 
   const handleSubmit = async () => {
-    if (!user) {
-      alert("You must be logged in to upload a product.");
+    if (!user) { 
+      toast.error("You must be logged in to upload a product.")
+      navigate('/login');
       return;
     }
 
     if (!name || !category || !price || !image) {
-      alert("All fields are required.");
+      toast.warning("All fields are required.")
       return;
     }
 
@@ -56,12 +58,12 @@ const Create = () => {
       setCategory("");
       setPrice("");
       setImage(null);
-      alert("Product uploaded successfully!");
+      toast.success("Product uploaded successfully!");
 
       navigate("/");
     } catch (error) {
       console.error("Error uploading product: ", error);
-      alert("Failed to upload the product. Please try again later.");
+      toast.error("Failed to upload the product. Please try again later.");
     } finally {
       setUploading(false);
     }
@@ -106,12 +108,10 @@ const Create = () => {
           />
           <br />
           <br />
-          <img
-            width="200px"
-            alt="Post"
-            height="200px"
+          {image && (<img
             src={image ? URL.createObjectURL(image) : ""}
-          ></img>
+          ></img>)}
+          
           <br />
           <input type="file" onChange={(e) => setImage(e.target.files[0])} />
           <br />

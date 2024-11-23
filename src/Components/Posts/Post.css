@@ -38,7 +38,6 @@
 .card {
   margin-right: 15px;
   padding: 13px;
-  max-width: 230px;
   width: 230px;
   height: 280px;
   display: inline-block;
@@ -110,6 +109,9 @@
   padding: 20px;
 }
 
+.recommendations .cards::-webkit-scrollbar{
+  display: none;
+}
 .recommendations {
   margin: 3%;
 }
@@ -125,4 +127,15 @@
   font-size: 24px;
   color: #002f34;
   margin: 0px -1px 10px 1%;
+}
+
+@media (max-width: 500px) {
+  .moreView .card {
+    width: 280px;
+    height: 320px;
+  }
+
+  .moreView .card .image {
+    height: 160px;
+  }
 }

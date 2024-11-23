@@ -5,19 +5,21 @@ import Signup from "../src/Pages/Signup";
 import Login from "../src/Pages/Login";
 import { useEffect, useContext } from "react";
 import { FirebaseContext } from "./store/FirebaseContext";
-import Create from '../src/Pages/Create'
-import ViewPost from '../src/Pages/ViewPost'   
+import Create from "../src/Pages/Create";
+import ViewPost from "../src/Pages/ViewPost";
 import SearchPage from "./Pages/Search";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
-
-  const {auth, setUser} = useContext(FirebaseContext);
+  const { auth, setUser } = useContext(FirebaseContext);
   useEffect(() => {
-    auth.onAuthStateChanged((user) => setUser(user))
-  })
+    auth.onAuthStateChanged((user) => setUser(user));
+  });
 
   return (
     <div>
+      <ToastContainer theme="colored"/>
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
