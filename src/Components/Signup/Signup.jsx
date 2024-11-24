@@ -49,7 +49,7 @@ export default function Signup() {
       setPhone("");
 
       navigate("/");
-      toast.success("register sussfullyh..");
+      toast.success("register successfully..");
     } catch (error) {
       toast.error("Error signing up ", error);
     } finally {

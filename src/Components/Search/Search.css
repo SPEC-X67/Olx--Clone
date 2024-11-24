@@ -6,9 +6,9 @@
 
 .mine-div {
   width: 89%;
-  background-color: #eeeeee;
   padding: 22px 26px 40px 26px;
-  border-radius: 20px;
+  background-color:#f9f7f7bb;
+  border-radius: 24px 24px 10px 10px;
 }
 
 h1 {
