@@ -25,7 +25,7 @@ function Banner() {
             <ul>
               {categories.map((category, index) => (
                 <li key={index}>
-                  <a href={`search?query=${category}`}>{category}</a>
+                  <a href={`search?query=${category.slice(0, -1)}`}>{category}</a>
                 </li>
               ))}
             </ul>

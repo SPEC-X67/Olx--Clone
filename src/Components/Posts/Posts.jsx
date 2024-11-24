@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import Heart from "../../assets/Heart";
 import "./Post.css";
 import { FirebaseContext } from "../../store/FirebaseContext";
@@ -11,6 +11,7 @@ function Posts() {
   const [products, setProducts] = useState([]);
   const { setSelectedProduct } = useProduct();
   const navigate = useNavigate();
+  const cardRef = useRef();
 
   useEffect(() => {
     const fecthProducts = async () => {
@@ -28,6 +29,15 @@ function Posts() {
 
     fecthProducts();
   }, [db]);
+
+  useEffect(() => {
+    cardRef.current.addEventListener("wheel", handleWheel);
+  }, [])
+
+  const handleWheel = (event) => {
+    event.preventDefault();
+    cardRef.current.scrollLeft += event.deltaY;
+  }
 
   const handleView = (product) => {
     setSelectedProduct(product); // Save the product in context
@@ -66,7 +76,7 @@ function Posts() {
         <div className="heading">
           <span>Fresh recommendations</span>
         </div>
-        <div className="cards" >
+        <div className="cards" ref={cardRef}>
         {products.reverse().map((product) => (
             <div className="card" key={product.id} style={{border: "1px solid"}} onClick={() => handleView(product)}>
               <div className="favorite">

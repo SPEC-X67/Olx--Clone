@@ -128,7 +128,7 @@ function View() {
         <div className="productDetails">
         Price
           <p>&#8377; {price}</p>
-          <span>{name}</span>
+          <span style={{fontWeight:"600", fontSize:"20px"}}>{name}</span>
           <p>{category}</p>
           <span>{new Date(createdAt.seconds * 1000).toDateString()}</span>
         </div>
@@ -136,8 +136,6 @@ function View() {
         <div className="contactDetails">
           Name : <p style={{fontWeight: "bold"}}>{seller.name}</p>
           <p>{seller.phone}</p>
-
-          
         </div>
         <button className="chatButton">Chat with Seller</button>
       </div>
